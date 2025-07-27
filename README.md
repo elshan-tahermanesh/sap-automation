@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ## 🔧 Usage
 1. **Clone or download** this repository:
    ```bash
-   git clone https://github.com/<your-username>/sap-automation.git
+   git clone https://github.com/elshan-tahermanesh/sap-automation.git
    cd sap-automation
    ```
 
