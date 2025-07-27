@@ -1,6 +1,8 @@
-============================
+
 README.md
-============================
+
+---
+
 # 🚀 SAP GUI Automation Script
 
 A **Python template** for automating tasks in **SAP GUI** using the official **SAP Scripting API**.  
