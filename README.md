@@ -1,8 +1,3 @@
-
-README.md
-
----
-
 # 🚀 SAP GUI Automation Script
 
 A **Python template** for automating tasks in **SAP GUI** using the official **SAP Scripting API**.  
@@ -95,7 +90,7 @@ LICENSE (MIT)
 ============================
 MIT License
 
-Copyright (c) 2025 <Your Name>
+Copyright (c) 2025 Elshan Tahermanesh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
