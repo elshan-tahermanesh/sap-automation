@@ -276,13 +276,7 @@ sap-automation/
 ├── requirements.txt
 ├── LICENSE
 ├── README.md
-│
-├── screenshots/
-│   ├── demo.png
-│   └── recorder.png
-│
-└── examples/
-    └── sample_recording.vbs
+
 ```
 
 ---
@@ -308,26 +302,6 @@ Create a folder:
 
 ```text
 screenshots/
-```
-
-Add screenshots such as:
-
-```text
-screenshots/
-├── sap-logon.png
-├── recorder.png
-├── automation.png
-└── console-output.png
-```
-
-Then embed them here:
-
-```md
-![SAP Logon](screenshots/sap-logon.png)
-
-![Script Recorder](screenshots/recorder.png)
-
-![Automation](screenshots/automation.png)
 ```
 
 ---
