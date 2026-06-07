@@ -296,16 +296,6 @@ This template can be used for:
 
 ---
 
-## 🖼️ Screenshots
-
-Create a folder:
-
-```text
-screenshots/
-```
-
----
-
 ## ⚠️ Disclaimer
 
 This project is intended for:
