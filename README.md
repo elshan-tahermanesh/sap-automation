@@ -1,119 +1,388 @@
-# 🚀 SAP GUI Automation Script
+# 🚀 SAP GUI Automation Template
 
-A **Python template** for automating tasks in **SAP GUI** using the official **SAP Scripting API**.  
-This script is designed for easy customization – simply use SAP's **Script Recorder**, copy the generated code, and paste it into the template.
+<p align="center">
+  <strong>Automate SAP GUI Tasks with Python and SAP Scripting API</strong>
+</p>
+
+<p align="center">
+  A reusable Python template for SAP GUI automation, designed to work seamlessly with SAP Script Recorder output.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue" />
+  <img src="https://img.shields.io/badge/SAP_GUI-Supported-yellow" />
+  <img src="https://img.shields.io/badge/Windows-Only-blue" />
+  <img src="https://img.shields.io/badge/SAP_Scripting-Enabled-green" />
+  <img src="https://img.shields.io/badge/License-MIT-success" />
+</p>
+
+---
+
+## 📖 Overview
+
+SAP GUI Automation Template is a Python-based starter project that simplifies the development of SAP GUI automation scripts using the official SAP Scripting API.
+
+Instead of manually writing complex automation logic from scratch, users can simply record their actions with SAP Script Recorder and paste the generated code directly into the provided template.
+
+The template automatically handles:
+
+* SAP GUI detection
+* SAP Logon startup
+* Session connection
+* Error handling
+* Console output formatting
+
+This allows developers, SAP users, and automation engineers to focus only on the business process they want to automate.
 
 ---
 
 ## ✨ Features
-- **Auto-connect** to existing SAP GUI sessions.
-- **Auto-launch** SAP Logon if it's not already running.
-- **Ready-to-use template** with a `process_material()` function for your custom SAP logic.
-- **Color-coded output** for better readability (via `colorama`).
-- Works seamlessly with **SAP Script Recording**.
+
+### 🔌 SAP Connection Management
+
+* Automatically detects running SAP GUI sessions
+* Automatically launches SAP Logon if not already running
+* Connects to existing SAP sessions
+* Handles connection errors gracefully
+
+### 🤖 Automation Ready
+
+* Compatible with SAP Script Recorder
+* Supports recorded VBScript conversion
+* Simple integration into existing SAP workflows
+* Reusable template structure
+
+### 🎨 Improved User Experience
+
+* Colorized console output
+* Clear status messages
+* Success and error notifications
+* Easy debugging
+
+### ⚡ Productivity Benefits
+
+* Eliminate repetitive manual tasks
+* Reduce human error
+* Speed up SAP operations
+* Reuse automation across projects
+
+---
+
+## 🏗️ Architecture
+
+```text
+┌─────────────────────┐
+│   Python Script     │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ SAP Scripting API   │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│      SAP GUI        │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│     SAP System      │
+└─────────────────────┘
+```
 
 ---
 
 ## 📦 Requirements
-- **Windows OS** with **SAP GUI for Windows** installed.
-- **SAP GUI Scripting** must be enabled:
-  - Go to `Options > Accessibility & Scripting > Scripting`.
-  - Check **"Enable Scripting"**.
-- **Python 3.8+** installed.
 
-### Python Packages
-Install the required dependencies:
+### Operating System
+
+* Windows 10 / 11
+* SAP GUI for Windows installed
+
+### SAP Configuration
+
+SAP GUI Scripting must be enabled:
+
+1. Open SAP GUI
+2. Go to:
+
+```text
+Options
+ └─ Accessibility & Scripting
+     └─ Scripting
+```
+
+3. Enable:
+
+```text
+Enable Scripting
+```
+
+### Python
+
+* Python 3.8 or newer
+
+---
+
+## 📥 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/elshan-tahermanesh/sap-automation.git
+cd sap-automation
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment:
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🔧 Usage
-1. **Clone or download** this repository:
-   ```bash
-   git clone https://github.com/elshan-tahermanesh/sap-automation.git
-   cd sap-automation
-   ```
+## 📚 Dependencies
 
-2. **Record your SAP steps**:
-   - Open SAP GUI.
-   - Go to `Customize Local Layout (Alt + F12) > Script Recording and Playback`.
-   - Record your actions and copy the generated VBScript code.
+```text
+pywin32
+colorama
+psutil
+```
 
-3. **Insert your SAP logic**:
-   Paste your recorded SAP code into the `process_material()` function inside `sap_automation.py`.
+Or install manually:
 
-4. **Run the script**:
-   ```bash
-   python sap_automation.py
-   ```
+```bash
+pip install pywin32 colorama psutil
+```
 
 ---
 
-## 📂 Example Structure
-Your custom code should go inside this placeholder:
+## 🎬 Recording SAP Actions
+
+To automate a process:
+
+### Step 1
+
+Open SAP GUI.
+
+### Step 2
+
+Open Script Recorder:
+
+```text
+Customize Local Layout (Alt + F12)
+ └─ Script Recording and Playback
+```
+
+### Step 3
+
+Start recording.
+
+### Step 4
+
+Perform the SAP actions you want to automate.
+
+### Step 5
+
+Stop recording.
+
+### Step 6
+
+Copy the generated VBScript code.
+
+---
+
+## 🔧 Adding Your Automation Logic
+
+Open:
+
+```text
+sap_automation.py
+```
+
+Locate:
+
+```python
+def process_material():
+    pass
+```
+
+Paste your recorded SAP commands inside this function.
+
+Example:
+
 ```python
 def process_material():
     try:
         session = connect_to_sap()
 
-        # Example placeholder logic:
-        # session.findById("wnd[0]/tbar[0]/okcd").text = "/nMM03"
-        # session.findById("wnd[0]").sendVKey(0)
+        session.findById("wnd[0]/tbar[0]/okcd").text = "/nMM03"
+        session.findById("wnd[0]").sendVKey(0)
 
-        print(Fore.GREEN + " SAP session is ready. Add your logic here.")
+        print("Automation completed.")
+
     except Exception as e:
-        print(Fore.RED + f" Error: {e}")
+        print(f"Error: {e}")
+```
+
+---
+
+## ▶️ Running the Script
+
+Start the automation:
+
+```bash
+python sap_automation.py
+```
+
+Example output:
+
+```text
+[SYSTEM] SAP GUI detected
+[SYSTEM] Connected to session
+[SYSTEM] Starting automation
+[SUCCESS] Process completed
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+sap-automation/
+│
+├── sap_automation.py
+├── requirements.txt
+├── LICENSE
+├── README.md
+│
+├── screenshots/
+│   ├── demo.png
+│   └── recorder.png
+│
+└── examples/
+    └── sample_recording.vbs
+```
+
+---
+
+## 🎯 Use Cases
+
+This template can be used for:
+
+* Material Master Automation
+* Purchase Order Processing
+* Quality Management Tasks
+* Production Planning Operations
+* Data Extraction
+* Mass Data Updates
+* Reporting Automation
+* Custom SAP Workflows
+
+---
+
+## 🖼️ Screenshots
+
+Create a folder:
+
+```text
+screenshots/
+```
+
+Add screenshots such as:
+
+```text
+screenshots/
+├── sap-logon.png
+├── recorder.png
+├── automation.png
+└── console-output.png
+```
+
+Then embed them here:
+
+```md
+![SAP Logon](screenshots/sap-logon.png)
+
+![Script Recorder](screenshots/recorder.png)
+
+![Automation](screenshots/automation.png)
 ```
 
 ---
 
 ## ⚠️ Disclaimer
-This script is intended for **educational and productivity purposes only**.  
-Ensure you have permission to automate processes in your SAP environment.  
-The author is **not responsible** for any misuse or damages caused by this script.
+
+This project is intended for:
+
+* Educational purposes
+* Productivity enhancement
+* Internal business automation
+
+Always ensure that you have permission to automate processes within your SAP environment.
+
+The author assumes no responsibility for misuse, data loss, or unauthorized automation activities.
+
+---
+
+## 👨‍💻 Author
+
+**Elshan Tahermanesh**
+
+* Network Engineer
+* SAP Automation Developer
+* M.Sc. Computer Science
+* University of Rostock
+
+GitHub:
+
+https://github.com/elshan-tahermanesh
+
+---
+
+## 🤝 Contributions
+
+Contributions, improvements, and suggestions are welcome.
+
+Feel free to:
+
+* Open an issue
+* Submit a pull request
+* Suggest new features
+
+---
+
+## ⭐ Support
+
+If you find this project useful, please consider giving it a star.
+
+⭐ Star the repository to support future development.
 
 ---
 
 ## 📜 License
-This project is licensed under the [MIT License](LICENSE).
 
----
+This project is licensed under the MIT License.
 
-**💡 Pro Tip:**  
-Use this as a **starter template** for any SAP GUI automation project. You only need to modify the `process_material()` function to suit your requirements.
-
-
-============================
-LICENSE (MIT)
-============================
-MIT License
-
-Copyright (c) 2025 Elshan Tahermanesh
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-
-============================
-requirements.txt
-============================
-pywin32
-colorama
-psutil
+See the LICENSE file for details.
